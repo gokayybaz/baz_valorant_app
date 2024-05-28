@@ -1,0 +1,12 @@
+{
+  "navBarTitle": "Baz Valorant Rehberi",
+  "agentsButtonTitle": "Ajanlar",
+    "mapsButtonTitle": "Haritalar",
+    "gunsButtonTitle": "Silahlar",
+    "gameModesButtonTitle": "Oyun Modları",
+    "seasonsButtonTitle": "Sezonlar",
+    "homeScreenButtonTitle": "Anasayfa",
+    "changeAgentAbilitiesShowButtonTitle": "Ajan Yeteneklerini Göster",
+    "changeAgentAbilitiesHideButtonTitle": "Ajan Yeteneklerini Gizle",
+    "unknownText": "Bilinmiyor"
+  }

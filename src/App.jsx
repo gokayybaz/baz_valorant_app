@@ -3,20 +3,28 @@ import React from 'react'
 import Agents from './screens/agents'
 import HomeScreen from './screens/home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Maps from './screens/maps'
+import { useTranslation } from 'react-i18next'
 
 
 
 function App() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <>
-      <nav className='flex items-center justify-center p-12 bg-slate-100'>
-        <img width={85} className='mr-2' src="https://1000logos.net/wp-content/uploads/2022/09/Valorant-Emblem.png" alt="" />
-        <h1 className='text-3xl font-bold'>Baz Valorant Rehberi</h1>
-      </nav>
-      <BrowserRouter basename="/">
+      <BrowserRouter>
         <Routes>
-          <Route element={<HomeScreen />} path="/" />
-          <Route element={<Agents />} path="/agents" />
+          {/* Burada Layout yapılanması kurduk. */}
+          <Route path="/" element={<Layout changeLang={changeLanguage} />}>
+            <Route element={<HomeScreen />} index />
+            <Route element={<Agents />} path="/agents" />
+            <Route element={<Maps />} path="/maps" />
+          </Route>
         </Routes>
       </BrowserRouter>
 
