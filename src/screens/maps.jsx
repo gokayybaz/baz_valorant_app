@@ -27,7 +27,7 @@ function Maps() {
             <ul className='grid grid-cols-4 w-full px-16 gap-y-5'>
                 {
                     maps.map(map => <li className={`cursor-pointer p-4 w-96 pt-4 m-4 rounded-lg border shadow-lg`}>
-                        <img src={map.splash} alt="" />
+                        <img loading='lazy' src={map.splash} alt="map-image" />
                         <h1 className='flex mt-4 font-bold text-lg'>{map.displayName} <p className='text-gray-400 font-semibold ml-1'>- {map.coordinates != null ? map.coordinates : t('unknownText')}</p></h1>
                         <h2 className='font-semibold italic text-base underline cursor-pointer'>Site : {map.tacticalDescription != null ? map.tacticalDescription : t('unknownText')}</h2>
                         {/* <p className='mt-2 text-sm'>{agent.description}</p> */}

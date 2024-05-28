@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 
-import Agents from './screens/agents'
-import HomeScreen from './screens/home'
+const Agents = lazy(() => import("./screens/agents"))
+const HomeScreen = lazy(() => import("./screens/home"))
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
-import Maps from './screens/maps'
+const Maps = lazy(() => import("./screens/maps"))
 import { useTranslation } from 'react-i18next'
 
 
@@ -18,14 +18,16 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          {/* Burada Layout yapılanması kurduk. */}
-          <Route path="/" element={<Layout changeLang={changeLanguage} />}>
-            <Route element={<HomeScreen />} index />
-            <Route element={<Agents />} path="/agents" />
-            <Route element={<Maps />} path="/maps" />
-          </Route>
-        </Routes>
+        <Suspense fallback={<div>Loading Data...</div>}>
+          <Routes>
+            {/* Burada Layout yapılanması kurduk. */}
+            <Route path="/" element={<Layout changeLang={changeLanguage} />}>
+              <Route element={<HomeScreen />} index />
+              <Route element={<Agents />} path="/agents" />
+              <Route element={<Maps />} path="/maps" />
+            </Route>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
 
     </>

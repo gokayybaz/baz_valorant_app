@@ -33,7 +33,7 @@ function Agents() {
             <ul className='grid gap-16 grid-cols-3'>
                 {
                     agents.map((agent, agentIndex) => <li className={`p-4 w-96 pt-4 m-4 rounded-lg border shadow-lg`}>
-                        <img src={agent.fullPortraitV2} alt="" />
+                        <img loading='lazy' src={agent.fullPortraitV2} alt="agent-image" />
                         <h1 className='flex mt-4 font-bold text-lg'>{agent.displayName} <p className='text-gray-400 font-semibold ml-1'>- {agent.developerName}</p></h1>
                         <h2 className='font-semibold italic text-base underline cursor-pointer'>Rol : {agent.role.displayName}</h2>
                         <p className='mt-2 text-sm'>{agent.description}</p>
