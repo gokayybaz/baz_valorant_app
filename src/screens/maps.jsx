@@ -3,20 +3,30 @@ import React, { useEffect, useState } from 'react'
 import { getMapData } from '../services/api/getMapData'
 
 function Maps() {
+    // Içerisinde api'dan gelecek verileri barındıracak bir state tanımladım.
     const [maps, setMaps] = useState([])
+
+    // İlgili sayfa yüklenmeden önce/yüklenirken çalışacak işlemler için bir useEffect oluşturdum.
     useEffect(() => {
+        // Burada api'dan veri çekmemizi sağlayacak bir fonksiyonu çağırdım.
+        // Parametre olarak i18next'in o anki dilini gönderdim.
+        // Ve response olarak gelen veriyi kullanarak yukarıdaki oluşturduğum state'i güncelledim böylece veri state içerisine aktarılmış oldu.
+        // Bir hata alınması durumunda alert dönmesini sağladım.
         getMapData(i18next.language).then(gData => {
             setMaps(gData.data)
         }).catch(e => alert(e))
 
+        // Burada ise dil değiştirildiğinde api isteğini değiştirilen dile göre tekrarlamasını sağladım.
         const handleLanguageChange = (lng) => {
             getMapData(i18next.language).then(gData => {
                 setMaps(gData.data)
             }).catch(e => alert(e))
         };
 
+        // Burada da i18next'in bize sağladığı dil değiştirildiğinde bize bildiren bir event'i kullandım ve dil değiştirildiğinde yapılacak işlemi gösterdim.
         i18next.on('languageChanged', handleLanguageChange);
 
+        // Burada ise işlem bittikten sonra component remove edilince izlenilen event'in kapatılmasını ve kapatılmadan önceki anlık konumunun kullanılmasını sağladım.
         return () => {
             i18next.off('languageChanged', handleLanguageChange);
         };

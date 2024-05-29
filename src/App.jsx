@@ -3,7 +3,7 @@ import React, { Suspense, lazy } from 'react'
 const Agents = lazy(() => import("./screens/agents"))
 const HomeScreen = lazy(() => import("./screens/home"))
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Layout from './components/Layout'
+import Layout from './screens/_layout'
 const Maps = lazy(() => import("./screens/maps"))
 import { useTranslation } from 'react-i18next'
 
