@@ -34,9 +34,9 @@ function Weapons() {
     }, [i18next])
     return (
         <div className='py-10'>
-            <ul className='grid grid-cols-4 w-full px-16 gap-y-10'>
+            <ul className='grid grid-cols-4 w-full  px-16 gap-y-10'>
                 {
-                    weapons.map(weapon => <li key={weapon.uuid} className={` w-[350px] flex flex-col justify-around items-center h-[300px] cursor-pointer p-4  pt-4 m-4 rounded-lg border shadow-lg`}>
+                    weapons.map(weapon => <li key={weapon.uuid} className={` w-[380px] flex flex-col justify-around items-center h-[300px] cursor-pointer p-4  pt-4 m-4 rounded-lg border shadow-lg`}>
                         <img loading='lazy' className={`flex ${weapon.shopData?.category == "Pistols" ? "w-[200px]" : "w-[330px]"}`} src={weapon.displayIcon} alt="map-image" />
                         <h1 className='flex mt-4 font-bold text-lg'>{weapon.displayName} <p className='text-gray-400 font-semibold ml-1'></p></h1>
                         <h2 className='font-semibold italic text-base underline cursor-pointer'>{weapon.shopData?.categoryText}</h2>
