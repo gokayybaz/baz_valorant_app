@@ -8,5 +8,6 @@
     "homeScreenButtonTitle": "Home Screen",
     "changeAgentAbilitiesShowButtonTitle": "Show Agent Abilities",
     "changeAgentAbilitiesHideButtonTitle": "Hide Agent Abilities",
-    "unknownText": "Unknown"
+    "unknownText": "Unknown",
+    "footerText": "Developed by Gökay Baz."
   }

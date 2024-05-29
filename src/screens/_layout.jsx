@@ -35,7 +35,7 @@ function Layout(props) {
             </nav>
             {/* Outlet -> Layout tanımlamak için geçerli bir Component denebilir. */}
             <Outlet />
-            <footer className='px-24 bg-slate-200 h-24 flex items-center justify-center font-semibold'>Gökay Baz Tarafından Geliştirilmiştir.</footer>
+            <footer className='px-24 bg-slate-200 h-24 flex items-center justify-center font-semibold'>{t('footerText')}</footer>
         </div>
     )
 }
