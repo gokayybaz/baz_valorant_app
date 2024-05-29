@@ -1,5 +1,4 @@
 import axios from "axios"
-import i18next from "i18next"
 
 export const getAgentData = async(lng) => {
     lng = lng == "en" ? "en-US" : "tr-TR"

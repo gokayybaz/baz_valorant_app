@@ -5,6 +5,7 @@ const HomeScreen = lazy(() => import("./screens/home"))
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './screens/_layout'
 const Maps = lazy(() => import("./screens/maps"))
+const Weapons = lazy(() => import("./screens/weapons"))
 import { useTranslation } from 'react-i18next'
 
 
@@ -25,6 +26,7 @@ function App() {
               <Route element={<HomeScreen />} index />
               <Route element={<Agents />} path="/agents" />
               <Route element={<Maps />} path="/maps" />
+              <Route element={<Weapons />} path="/weapons" />
             </Route>
           </Routes>
         </Suspense>
