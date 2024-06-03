@@ -7,6 +7,7 @@ import Layout from './screens/_layout'
 const Maps = lazy(() => import("./screens/maps"))
 const Weapons = lazy(() => import("./screens/weapons"))
 import { useTranslation } from 'react-i18next'
+import GameModes from './screens/gamemodes'
 
 
 
@@ -27,6 +28,7 @@ function App() {
               <Route element={<Agents />} path="/agents" />
               <Route element={<Maps />} path="/maps" />
               <Route element={<Weapons />} path="/weapons" />
+              <Route element={<GameModes />} path="/gamemodes" />
             </Route>
           </Routes>
         </Suspense>
