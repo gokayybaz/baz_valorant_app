@@ -1,6 +1,7 @@
 import i18next, { t } from 'i18next'
 import React, { useEffect, useState } from 'react'
 import { getMapData } from '../services/api/getMapData'
+import "../styles/data-loader.css"
 
 function Maps() {
     // Içerisinde api'dan gelecek verileri barındıracak bir state tanımladım.
@@ -34,29 +35,32 @@ function Maps() {
     }, [i18next])
     return (
         <div className='py-10'>
-            <ul className='grid grid-cols-4 w-full px-16 gap-y-5'>
-                {
-                    maps.map(map => <li className={`cursor-pointer p-4 w-96 pt-4 m-4 rounded-lg border shadow-lg`}>
-                        <img loading='lazy' src={map.splash} alt="map-image" />
-                        <h1 className='flex mt-4 font-bold text-lg'>{map.displayName} <p className='text-gray-400 font-semibold ml-1'>- {map.coordinates != null ? map.coordinates : t('unknownText')}</p></h1>
-                        <h2 className='font-semibold italic text-base underline cursor-pointer'>Site : {map.tacticalDescription != null ? map.tacticalDescription : t('unknownText')}</h2>
-                        {/* <p className='mt-2 text-sm'>{agent.description}</p> */}
+            {
+                maps.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid grid-cols-4 w-full px-16 gap-y-5'>
+                    {
+                        maps.map(map => <li className={`cursor-pointer p-4 w-96 pt-4 m-4 rounded-lg border shadow-lg`}>
+                            <img loading='lazy' src={map.splash} alt="map-image" />
+                            <h1 className='flex mt-4 font-bold text-lg'>{map.displayName} <p className='text-gray-400 font-semibold ml-1'>- {map.coordinates != null ? map.coordinates : t('unknownText')}</p></h1>
+                            <h2 className='font-semibold italic text-base underline cursor-pointer'>Site : {map.tacticalDescription != null ? map.tacticalDescription : t('unknownText')}</h2>
+                            {/* <p className='mt-2 text-sm'>{agent.description}</p> */}
 
-                        {
-                            // (agentAbilitieShow) ? <div className='mt-4 p-8 pb-1 rounded-xl' style={{ backgroundColor: `#${agent.backgroundGradientColors[3]}` }}>
-                            //     {
-                            //         agent.abilities.map((abilitie) =>
-                            //             <span className='w-full mb-9 flex items-center' >
-                            //                 <img width={50} src={abilitie.displayIcon} alt="" />
-                            //                 <h4 className=' underline cursor-pointer ml-4 text-white font-semibold'>{abilitie.displayName}</h4>
-                            //             </span>
-                            //         )
-                            //     }
-                            // </div> : <></>
-                        }
-                    </li>)
-                }
-            </ul>
+                            {
+                                // (agentAbilitieShow) ? <div className='mt-4 p-8 pb-1 rounded-xl' style={{ backgroundColor: `#${agent.backgroundGradientColors[3]}` }}>
+                                //     {
+                                //         agent.abilities.map((abilitie) =>
+                                //             <span className='w-full mb-9 flex items-center' >
+                                //                 <img width={50} src={abilitie.displayIcon} alt="" />
+                                //                 <h4 className=' underline cursor-pointer ml-4 text-white font-semibold'>{abilitie.displayName}</h4>
+                                //             </span>
+                                //         )
+                                //     }
+                                // </div> : <></>
+                            }
+                        </li>)
+                    }
+                </ul>
+            }
+
         </div>
     )
 }

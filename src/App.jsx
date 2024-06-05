@@ -8,7 +8,7 @@ const Maps = lazy(() => import("./screens/maps"))
 const Weapons = lazy(() => import("./screens/weapons"))
 import { useTranslation } from 'react-i18next'
 import GameModes from './screens/gamemodes'
-
+import "./styles/page-loader.css"
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Suspense fallback={<div>Loading Data...</div>}>
+        <Suspense fallback={<div className=' flex w-screen h-screen items-center justify-center'><span className='loader'></span></div>}>
           <Routes>
             {/* Burada Layout yapılanması kurduk. */}
             <Route path="/" element={<Layout changeLang={changeLanguage} />}>
