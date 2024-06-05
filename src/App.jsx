@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Suspense fallback={<div className=' flex w-screen h-screen items-center justify-center'><span className='loader'></span></div>}>
+        <Suspense fallback={<></>}>
           <Routes>
             {/* Burada Layout yapılanması kurduk. */}
             <Route path="/" element={<Layout changeLang={changeLanguage} />}>
