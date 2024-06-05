@@ -2,6 +2,7 @@ import i18next, { t } from 'i18next'
 import React, { useEffect, useState } from 'react'
 import { getWeaponData } from '../services/api/getWeaponData'
 import "../styles/data-loader.css"
+import { ImageWithPlaceholder } from '../components/ImageWithPlaceholder'
 
 function Weapons() {
     // Içerisinde api'dan gelecek verileri barındıracak bir state tanımladım.
@@ -39,7 +40,7 @@ function Weapons() {
                 weapons.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid grid-cols-4 w-full  px-16 gap-y-10'>
                     {
                         weapons.map(weapon => <li key={weapon.uuid} className={` w-[380px] flex flex-col justify-around items-center h-[300px] cursor-pointer p-4  pt-4 m-4 rounded-lg border shadow-lg`}>
-                            <img loading='lazy' className={`flex ${weapon.shopData?.category == "Pistols" ? "w-[200px]" : "w-[330px]"}`} src={weapon.displayIcon} alt="map-image" />
+                            <ImageWithPlaceholder placeholderWidth={330} className={`flex ${weapon.shopData?.category == "Pistols" ? "w-[200px]" : "w-[330px]"}`} src={weapon.displayIcon} alt="weapon-image" />
                             <h1 className='flex mt-4 font-bold text-lg'>{weapon.displayName} <p className='text-gray-400 font-semibold ml-1'></p></h1>
                             <h2 className='font-semibold italic text-base underline cursor-pointer'>{weapon.shopData?.categoryText}</h2>
                         </li>)

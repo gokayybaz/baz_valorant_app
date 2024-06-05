@@ -1,13 +1,16 @@
 import { t } from 'i18next'
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaHome } from 'react-icons/fa'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
 function Layout(props) {
 
     // Dil seçici butonlarından Türkçe dil butonunun aktif olma durumu ve aktif butonun stil özelliklerini tanımladım
-    const [trButtonIsActive, setTrButtonIsActive] = useState(true)
     const activeButtonStyle = "bg-rose-700 rounded-lg p-2 px-3 text-white font-semibold text-sm"
+
+    const { i18n } = useTranslation();
+    const currentLanguage = i18n.language;
 
     // Tarayıcının o anki url rotasını aldım.
     const location = useLocation()
@@ -19,8 +22,8 @@ function Layout(props) {
             <nav className='flex items-center justify-between p-12 bg-slate-100'>
                 {/* Dil değiştirme butonları */}
                 <div className='p-2 bg-slate-300 rounded-lg flex w-38 justify-between'>
-                    <button className={trButtonIsActive ? activeButtonStyle : "px-3 p-2 text-sm"} onClick={() => { props.changeLang('tr'), setTrButtonIsActive(true) }}>Türkçe</button>
-                    <button className={trButtonIsActive ? "px-3 p-2 text-sm" : activeButtonStyle} onClick={() => { props.changeLang('en'), setTrButtonIsActive(false) }}>English</button>
+                    <button className={currentLanguage == "tr" ? activeButtonStyle : "px-3 p-2 text-sm"} onClick={() => { props.changeLang('tr') }}>Türkçe</button>
+                    <button className={currentLanguage == "en" ? activeButtonStyle : "px-3 p-2 text-sm"} onClick={() => { props.changeLang('en') }}>English</button>
                 </div>
                 {/* Logo ve Logo Text Alanı */}
                 <div className='flex items-center'>

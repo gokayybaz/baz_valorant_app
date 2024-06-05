@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getAgentData } from '../services/api/getAgentData.js'
 import "../styles/data-loader.css"
 import i18next, { t } from 'i18next'
+import { ImageWithPlaceholder } from '../components/ImageWithPlaceholder.jsx'
 
 
 function Agents() {
@@ -36,7 +37,11 @@ function Agents() {
                 agents.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid gap-16 grid-cols-3'>
                     {
                         agents.map((agent, agentIndex) => <li className={`p-4 w-96 pt-4 m-4 rounded-lg border shadow-lg`}>
-                            <img loading='lazy' src={agent.fullPortraitV2} alt="agent-image" />
+                            <ImageWithPlaceholder
+                                src={agent.fullPortraitV2}
+                                alt="agent-image"
+                                placeholder="https://senospetrol.com/wp-content/uploads/2023/08/placeholder-1.png"
+                            />
                             <h1 className='flex mt-4 font-bold text-lg'>{agent.displayName} <p className='text-gray-400 font-semibold ml-1'>- {agent.developerName}</p></h1>
                             <h2 className='font-semibold italic text-base underline cursor-pointer'>Rol : {agent.role.displayName}</h2>
                             <p className='mt-2 text-sm'>{agent.description}</p>

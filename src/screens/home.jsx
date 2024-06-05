@@ -4,6 +4,7 @@ import { FaPersonMilitaryRifle, FaMap, FaGun, FaGamepad, FaBarsProgress } from "
 import NavButton from '../components/NavButton.jsx'
 import BackgroundImage from "../assets/valorant-img.jpeg"
 import { t } from 'i18next';
+import { ImageWithPlaceholder } from '../components/ImageWithPlaceholder.jsx';
 
 
 function HomeScreen() {
@@ -11,7 +12,14 @@ function HomeScreen() {
         <>
 
             <div className='flex m-4 rounded-lg items-center'>
-                <img className='rounded-lg shadow-lg' width={1150} src={BackgroundImage} alt="valorant-image" />
+                <ImageWithPlaceholder
+                    src={BackgroundImage}
+                    alt="valorant-image"
+                    width={3830}
+                    className='rounded-lg shadow-lg'
+                    placeholder="https://senospetrol.com/wp-content/uploads/2023/08/placeholder-1.png"
+                />
+
                 <div className='w-full h-[550px] flex justify-around flex-col items-center px-24'>
                     <NavButton title={t('agentsButtonTitle')} link="/agents" icon={<FaPersonMilitaryRifle className='mr-3 text-2xl' />} />
                     <NavButton title={t('mapsButtonTitle')} link="/maps" icon={<FaMap className='mr-3 text-2xl' />} />

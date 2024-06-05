@@ -2,6 +2,7 @@ import i18next, { t } from 'i18next'
 import React, { useEffect, useState } from 'react'
 import { getMapData } from '../services/api/getMapData'
 import "../styles/data-loader.css"
+import { ImageWithPlaceholder } from '../components/ImageWithPlaceholder'
 
 function Maps() {
     // Içerisinde api'dan gelecek verileri barındıracak bir state tanımladım.
@@ -39,7 +40,13 @@ function Maps() {
                 maps.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid grid-cols-4 w-full px-16 gap-y-5'>
                     {
                         maps.map(map => <li className={`cursor-pointer p-4 w-96 pt-4 m-4 rounded-lg border shadow-lg`}>
-                            <img loading='lazy' src={map.splash} alt="map-image" />
+
+                            <ImageWithPlaceholder
+                                src={map.splash}
+                                placeholderWidth={300}
+                                alt="map-image"
+                                placeholder="https://senospetrol.com/wp-content/uploads/2023/08/placeholder-1.png"
+                            />
                             <h1 className='flex mt-4 font-bold text-lg'>{map.displayName} <p className='text-gray-400 font-semibold ml-1'>- {map.coordinates != null ? map.coordinates : t('unknownText')}</p></h1>
                             <h2 className='font-semibold italic text-base underline cursor-pointer'>Site : {map.tacticalDescription != null ? map.tacticalDescription : t('unknownText')}</h2>
                             {/* <p className='mt-2 text-sm'>{agent.description}</p> */}
