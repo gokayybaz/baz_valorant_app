@@ -12,11 +12,11 @@ Valorant Guide App is a ReactJS application designed to help players learn about
 ![desktop-screenshot5](./screenshots/desktop/5.png)
 
 - Mobile
-![mobile-screenshot1](./screenshots/mobile/1.png)
-![mobile-screenshot2](./screenshots/mobile/2.png)
-![mobile-screenshot3](./screenshots/mobile/3.png)
-![mobile-screenshot4](./screenshots/mobile/4.png)
-![mobile-screenshot5](./screenshots/mobile/5.png)
+![mobile-screenshot1](./screenshots/mobile/1.PNG)
+![mobile-screenshot2](./screenshots/mobile/2.PNG)
+![mobile-screenshot3](./screenshots/mobile/3.PNG)
+![mobile-screenshot4](./screenshots/mobile/4.PNG)
+![mobile-screenshot5](./screenshots/mobile/5.PNG)
 
 
 ## Features
