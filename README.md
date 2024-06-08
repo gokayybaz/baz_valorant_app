@@ -5,18 +5,19 @@ Valorant Guide App is a ReactJS application designed to help players learn about
 
 ## Screenshots
 - Desktop
-![desktop-screenshot1](./screenshots/desktop/1.png)
-![desktop-screenshot2](./screenshots/desktop/2.png)
-![desktop-screenshot3](./screenshots/desktop/3.png)
-![desktop-screenshot4](./screenshots/desktop/4.png)
-![desktop-screenshot5](./screenshots/desktop/5.png)
+<img src="./screenshots/desktop/1.png" alt="Desktop Screenshot-1" width="200">
+<img src="./screenshots/desktop/2.png" alt="Desktop Screenshot-2" width="200">
+<img src="./screenshots/desktop/3.png" alt="Desktop Screenshot-3" width="200">
+<img src="./screenshots/desktop/4.png" alt="Desktop Screenshot-4" width="200">
+<img src="./screenshots/desktop/5.png" alt="Desktop Screenshot-5" width="200">
 
 - Mobile
-![mobile-screenshot1](./screenshots/mobile/1.PNG)
-![mobile-screenshot2](./screenshots/mobile/2.PNG)
-![mobile-screenshot3](./screenshots/mobile/3.PNG)
-![mobile-screenshot4](./screenshots/mobile/4.PNG)
-![mobile-screenshot5](./screenshots/mobile/5.PNG)
+<img src="./screenshots/mobile/1.png" alt="Mobile Screenshot-1" width="200">
+<img src="./screenshots/mobile/2.png" alt="Mobile Screenshot-2" width="200">
+<img src="./screenshots/mobile/3.png" alt="Mobile Screenshot-3" width="200">
+<img src="./screenshots/mobile/4.png" alt="Mobile Screenshot-4" width="200">
+<img src="./screenshots/mobile/5.png" alt="Mobile Screenshot-5" width="200">
+
 
 
 ## Features
