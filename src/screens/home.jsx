@@ -11,7 +11,7 @@ function HomeScreen() {
     return (
         <>
 
-            <div className='flex m-4 rounded-lg items-center'>
+            <div className='flex flex-col lg:flex-row m-4 rounded-lg items-center'>
                 <ImageWithPlaceholder
                     src={BackgroundImage}
                     alt="valorant-image"
@@ -20,7 +20,7 @@ function HomeScreen() {
                     placeholder="https://senospetrol.com/wp-content/uploads/2023/08/placeholder-1.png"
                 />
 
-                <div className='w-full h-[550px] flex justify-around flex-col items-center px-24'>
+                <div className='w-full flex h-[400px] lg:h-[500px] justify-around lg:px-24 flex-col items-center mt-3'>
                     <NavButton title={t('agentsButtonTitle')} link="/agents" icon={<FaPersonMilitaryRifle className='mr-3 text-2xl' />} />
                     <NavButton title={t('mapsButtonTitle')} link="/maps" icon={<FaMap className='mr-3 text-2xl' />} />
                     <NavButton title={t('gunsButtonTitle')} link="/weapons" icon={<FaGun className='mr-3 text-2xl' />} />

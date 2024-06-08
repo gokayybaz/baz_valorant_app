@@ -31,7 +31,7 @@ function GameModes() {
     return (
         <div className='py-10 justify-center flex'>
             {
-                gameModes.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid grid-cols-3 items-center justify-center gap-x-48  px-16 gap-y-16'>
+                gameModes.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid lg:grid-cols-3 grid-cols-1 items-center justify-center gap-x-48  px-0 gap-y-10'>
                     {
                         gameModes.map(gameModes => <li key={gameModes.uuid} className={` w-[280px] bg-rose-600 flex flex-col justify-around items-center h-[280px] cursor-pointer p-4  pt-4 m-4 rounded-lg border shadow-lg`}>
                             {
