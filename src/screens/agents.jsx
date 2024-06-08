@@ -36,7 +36,7 @@ function Agents() {
             {
                 agents.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid gap-16 lg:grid-cols-3 grid-cols-1'>
                     {
-                        agents.map((agent, agentIndex) => <li className={`p-4 lg:w-96 w-80 pt-4 m-4 rounded-lg border shadow-lg`}>
+                        agents.map((agent, agentIndex) => <li className={`p-4 lg:w-96 pt-4 m-4 rounded-lg border shadow-lg`}>
                             <ImageWithPlaceholder
                                 src={agent.fullPortraitV2}
                                 alt="agent-image"
