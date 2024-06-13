@@ -37,7 +37,7 @@ function Maps() {
     return (
         <div className='py-10'>
             {
-                maps.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid lg:grid-cols-4 grid-cols-1 w-full lg:gap-x-10 lg:px-10 gap-y-5'>
+                maps.length == 0 ? <div className='w-full h-[60vh] flex items-center justify-center'><span className='data-loader'></span></div> : <ul className='grid lg:grid-cols-3 grid-cols-1 w-full lg:gap-x-10 lg:px-10 gap-y-5'>
                     {
                         maps.map(map => <li className={`cursor-pointer p-4 w-[200] pt-4 m-4 rounded-lg border shadow-lg`}>
 

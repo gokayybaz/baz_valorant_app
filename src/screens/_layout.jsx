@@ -19,7 +19,6 @@ function Layout(props) {
     const location = useLocation()
     // Tarayıcının o anki rotasının "/" olup olmadığını yani ana ekranda olup olmadığını kontrol ettim.
     const isHomePage = location.pathname === "/"
-
     return (
         <div>
             <nav className='flex-row-reverse flex lg:flex-row items-center justify-between lg:p-12 p-4 bg-slate-100'>
